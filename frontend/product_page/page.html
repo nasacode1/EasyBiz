@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page - EasyBiz</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      p,
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+      }
+      .logo {
+        display: flex;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+      }
+
+      header {
+        background-color: #008080;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header .logo h1 {
+        font-size: 2.5rem;
+        margin-left: 10px;
+      }
+
+      nav ul {
+        display: flex;
+        align-items: center;
+      }
+
+      nav li {
+        margin-left: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.2rem;
+      }
+
+      nav .search-bar {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+      }
+
+      nav input[type="text"] {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        color: #333;
+        width: 200px;
+      }
+
+      nav button {
+        padding: 8px 20px;
+        background-color: #008080;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      main {
+        padding: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 40px;
+      }
+
+      .product {
+        text-align: center;
+        flex-basis: 30%;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+        margin-bottom: 20px;
+      }
+
+      .product img {
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      .product h4 {
+        font-size: 1.5rem;
+        color: #555;
+        margin-bottom: 10px;
+      }
+
+      .product p {
+        font-size: 1.1rem;
+        color: #777;
+        margin-bottom: 10px;
+      }
+
+      .product button {
+        padding: 8px 20px;
+        background-color: #008080;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .product:hover {
+        transform: translateY(-5px);
+      }
+
+      .cart-summary {
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      .cart-summary h3 {
+        font-size: 2rem;
+        color: #008080;
+        margin-bottom: 20px;
+      }
+
+      #cart-items {
+        list-style: none;
+        margin-bottom: 20px;
+      }
+
+      #cart-items li {
+        margin-bottom: 10px;
+      }
+
+      #cart-total {
+        font-size: 1.2rem;
+        color: #555;
+      }
+
+      .cart-summary button {
+        padding: 8px 20px;
+        background-color: #008080;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        margin-top: 40px;
+      }
+      @media only screen and (max-width: 768px) {
+        .product {
+          flex-basis: 100%;
+        }
+        .product img {
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+          border-radius: 5px;
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="logo.png" alt="EasyBiz Logo" />
+        <h1>EasyBiz</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../homepage/homepage.html">Home</a></li>
+          <li><a href="../cart_summary/cart_summary.html">Your Cart</a></li>
+          <li><a href="../homepage/homepage.html">Logout</a></li>
+          <li><a href="../about_us/about_us.html">About Us</a></li>
+        </ul>
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." />
+          <button type="submit">Search</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="products">
+        <div class="product">
+          <img src="shirt.png" alt="Product 1" />
+          <h4>Shirts</h4>
+          <p>
+            Elevate your style with our Shirts – a perfect fusion of comfort and
+            sophistication for any occasion.
+          </p>
+          <p>$19.99</p>
+          <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="shoes.png" alt="Product 2" />
+          <h4>Shoes</h4>
+          <p>
+            Step out in our comfy yet stylish shoes, perfect for any occasion
+            and making every walk a breeze!
+          </p>
+          <p>$24.99</p>
+          <button onclick="addToCart('Product 2', 24.99)">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="purse.png" alt="Product 3" />
+          <h4>Purse</h4>
+          <p>
+            Elevate your look with our trendy purse, marrying fashion and
+            functionality for a touch of everyday elegance.
+          </p>
+          <p>$10.90</p>
+          <button onclick="addToCart('Product 3', 10.90)">Add to Cart</button>
+        </div>
+      </section>
+
+      <section class="cart-summary">
+        <h3>Cart Summary</h3>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="cart-total">0.00</span></p>
+        <a href="../cart_summary/cart_summary.html">
+          <button onclick="checkout()">Checkout</button>
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 EasyBiz. All rights reserved.</p>
+    </footer>
+
+    <script>
+      let cartItems = [];
+      let cartTotal = 0;
+
+      function addToCart(productName, price) {
+        cartItems.push({ productName, price });
+        cartTotal += price;
+        updateCartSummary();
+      }
+
+      function updateCartSummary() {
+        const cartList = document.getElementById("cart-items");
+        const cartTotalElement = document.getElementById("cart-total");
+        cartList.innerHTML = "";
+
+        cartItems.forEach((item) => {
+          const listItem = document.createElement("li");
+          listItem.textContent = `${item.productName} - $${item.price.toFixed(
+            2
+          )}`;
+          cartList.appendChild(listItem);
+        });
+
+        cartTotalElement.textContent = cartTotal.toFixed(2);
+      }
+
+      function checkout() {
+        alert("Redirecting to checkout. Total: $" + cartTotal.toFixed(2));
+      }
+    </script>
+  </body>
+</html>

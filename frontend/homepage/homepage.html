@@ -222,7 +222,7 @@
         padding: 10px;
         margin-top: 40px;
       }
-      .logo{
+      .logo {
         display: flex;
       }
     </style>
@@ -235,10 +235,13 @@
       </div>
       <nav>
         <ul>
-          <li><a href="#">Customers</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">About Us</a></li>
+          <li>
+            <a href="../Login-Signup-buyer/signin.html">Login as Buyer</a>
+          </li>
+          <li>
+            <a href="../Login-Signup-seller/signin.html">Login as Seller</a>
+          </li>
+          <li><a href="../about_us/about_us.html">About Us</a></li>
         </ul>
         <div class="search-bar">
           <input type="text" placeholder="Search..." />
@@ -254,7 +257,7 @@
           EasyBiz is your all-in-one solution for a seamless online shopping
           experience. Connect with customers, manage products, and more!
         </p>
-        <a href="#" class="cta-button">Get Started</a>
+        <a href="#" class="cta-button" onclick="askUser()">Get Started</a>
       </section>
 
       <section class="features">
@@ -343,5 +346,23 @@
     <footer>
       <p>&copy; 2023 EasyBiz. All rights reserved.</p>
     </footer>
+    <script>
+      function askUser() {
+        var choice = prompt(
+          "Are you a buyer or a seller? (Type 'buyer' or 'seller')"
+        );
+
+        if (choice !== null) {
+          choice = choice.toLowerCase();
+          if (choice === "buyer") {
+            window.location.href = "../Login-Signup-buyer/signin.html";
+          } else if (choice === "seller") {
+            window.location.href = "../Login-Signup-seller/signin.html";
+          } else {
+            alert('Invalid choice. Please type "buyer" or "seller".');
+          }
+        }
+      }
+    </script>
   </body>
 </html>
