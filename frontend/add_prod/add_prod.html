@@ -5,41 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "add_prod.css">
-    <title>Add a product</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+
+    <title>Add a Product</title>
 </head>
 <body>
-    <h1>Add a product</h1>
+    <h1>Add a Product</h1>
     <form action="">
 	<div class = "maincontainer">
 	    <label for = "producttitle">Product title</label>
 	    <br>
 	    <input type = "text" placeholder = "Title" name = "producttitle" required>
 	    <br><br>
-	    <label for "price">Price of the product</label>
+	    <label for "price">Price of Product</label>
 	    <br>
-	    <input type = "number" placeholder = "enter price" name = "price" required>
+	    <input type = "number" placeholder = "Enter Price" name = "price" required>
 	    <br><br>
-	    <label for "desc">Product description</label>
+	    <label for "desc">Product Description</label>
 	    <br>
-	    <input type = "text" placeholder = "brief description" name = "desc" required>
+	    <input type = "text" placeholder = "Brief Description" name = "desc" required>
 	    <br><br>
-	    <label for "stock">Stock available</label>
+	    <label for "stock">Stock Available</label>
 	    <br>
-	    <input type = "number" placeholder = "qty available" name = "stock" required>
+	    <input type = "number" placeholder = "Quantity Available" name = "stock" required>
 	    <br><br>
-	    <label for "offanddis">Offers and discounts</label>
+	    <label for "offanddis">Offers and Discounts</label>
 	    <br>
-	    <input type = "text" placeholder = "if available" name = "offanddis">
+	    <input type = "text" placeholder = "If Available" name = "offanddis">
 	    <br><br>
-	    <label for="files">Product images</label>
+	    <label for="files">Product Images</label>
 	    <br>
   	    <input type="file" id="files" name="files" multiple> 
 	    <br><br>
-		<a href="../admindisplay/admindisplay.html">
-	    <button type="addprod">Add product</button>
-	    </a>
+		<div class="mt-4 mb-4 d-flex justify-content-between">
+			<span><a href="../admindisplay/admindisplay.html" style="color: white; text-decoration: none;">Previous Page</a></span>
+			<button class="btn px-3" id="payButton" style="color: black; background-color: #fff;">Pay &#8377XXX.xx</button>
+		</div>
 	</div>
     </form>
+	<footer>
+        <p>&copy; 2023 EasyBiz. All rights reserved.</p>
+    </footer>
 </body>
 </html>
 

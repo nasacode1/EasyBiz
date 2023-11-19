@@ -19,7 +19,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #37517e;
+  color: teal;
 }
 
 .section-title h2::before {
@@ -80,7 +80,7 @@ section {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
-  color: #37517e;
+  color: teal;
 }
 
 .team .member span {
@@ -126,7 +126,7 @@ section {
 }
 
 .team .member .social a i {
-  color: #37517e;
+  color: teal;
   font-size: 16px;
   margin: 0 2px;
 }

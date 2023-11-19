@@ -1,50 +1,55 @@
-
-body{
-	font-family:trebuchet ms, fantasy;
-	background: #eeeeee;
-	color:black;
+body {
+  font-family: trebuchet ms, fantasy;
+  background: #eeeeee;
 }
-h1{
-	text-align : center;
+h1 {
+  text-align: center;
 }
-form{
-	width : 35rem;
-	margin: auto;
-	color : black;
-	padding : 20px;
-	backdrop-filter: blur(25px) saturate(100%);
-    -webkit-backdrop-filter: blur(25px) saturate(100%);
-    background-color: #d7b7f8;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
+form {
+  width: 35rem;
+  margin: auto;
+  color: white;
+  padding: 20px;
+  backdrop-filter: blur(25px) saturate(100%);
+  -webkit-backdrop-filter: blur(25px) saturate(100%);
+  background-color: teal;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
 }
-input[type = text], input[type = number]{
-       width : 100%;
-       margin : 10px 0;
-       border-radius: 12px;
-       padding : 15px 18px;
-       box-sizing : border-box;
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 12px;
+  padding: 15px 18px;
+  box-sizing: border-box;
 }
-button{
-	background-color : #f17cf1;
-	color : white;
-	padding : 14px 20px;
-	border-radius: 12px;
-	margin : 7px 0;
-	font-size : 18px;
+button {
+  color: white;
+  padding: 14px 20px;
+  border-radius: 12px;
+  margin: 7px 0;
+  font-size: 18px;
 }
-button:hover{
-	opacity : 0.6;
-	cursor : pointer;
+button:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }
- @media screen and (max-width: 600px) {
-    form{
-      width: 25rem;
-    }
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin-top: 40px;
+}
+@media screen and (max-width: 600px) {
+  form {
+    width: 25rem;
   }
+}
 
-  @media screen and (max-width: 400px) {
-    form{
-      width: 20rem;
-    }
+@media screen and (max-width: 400px) {
+  form {
+    width: 20rem;
   }
+}
