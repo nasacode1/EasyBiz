@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src = "cart.js" async></script>
     <title>Product Page - EasyBiz</title>
     <link
       rel="stylesheet"
@@ -219,35 +220,35 @@
     <main>
       <section class="products">
         <div class="product">
-          <img src="shirt.png" alt="Product 1" />
-          <h4>Shirts</h4>
+          <img class="shop-item-image"src="shirt.png" alt="Product 1" />
+          <h4 class="shop-item-title">Shirts</h4>
           <p>
             Elevate your style with our Shirts – a perfect fusion of comfort and
             sophistication for any occasion.
           </p>
-          <p>Rs.399</p>
-          <button onclick="addToCart('Product 1', 399)">Add to Cart</button>
+          <p class="shop-item-price">Rs.399</p>
+          <button class="shop-item-button" onclick="addToCart('Product 1', 399)">Add to Cart</button>
         </div>
 
         <div class="product">
-          <img src="shoes.png" alt="Product 2" />
-          <h4>Shoes</h4>
+          <img class="shop-item-image"src="shoes.png" alt="Product 2" />
+          <h4  class="shop-item-title">Shoes</h4>
           <p>
             Step out in our comfy yet stylish shoes, perfect for any occasion
             and making every walk a breeze!
           </p>
-          <p>Rs.2999</p>
-          <button onclick="addToCart('Product 2', 2999)">Add to Cart</button>
+          <p class="shop-item-price">Rs.2999</p>
+          <button class="shop-item-button" onclick="addToCart('Product 2', 2999)">Add to Cart</button>
         </div>
         <div class="product">
-          <img src="purse.png" alt="Product 3" />
-          <h4>Purse</h4>
+          <img class="shop-item-image"src="purse.png" alt="Product 3" />
+          <h4  class="shop-item-title">Purse</h4>
           <p>
             Elevate your look with our trendy purse, marrying fashion and
             functionality for a touch of everyday elegance.
           </p>
-          <p>Rs.599</p>
-          <button onclick="addToCart('Product 3', 599)">Add to Cart</button>
+          <p class="shop-item-price">Rs.599</p>
+          <button class="shop-item-button"  onclick="addToCart('Product 3', 599)">Add to Cart</button>
         </div>
       </section>
 

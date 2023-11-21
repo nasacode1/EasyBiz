@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src = "cart.js" async></script>
     <title>Cart Summary</title>
     <link
       rel="stylesheet"
@@ -53,17 +54,15 @@
                     ></th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
+                <tbody class="cart-items">
+                  <tr class="cart-row">
                     <td>
                       <figure class="itemside align-items-center">
                         <div class="aside">
                           <img src="img1.png" class="img-sm" />
                         </div>
                         <figcaption class="info">
-                          <a href="#" class="title text-dark" data-abc="true"
-                            >Tshirt with round neck</a
-                          >
+                          <p class="cart-item-title">Tshirt with round neck</p>
                           <p class="text-muted small">
                             SIZE: L <br />
                             Brand: MAXTRA
@@ -72,12 +71,7 @@
                       </figure>
                     </td>
                     <td>
-                      <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
+                      <input class="cart-quantity-input" type="number" value="1">
                     </td>
                     <td>
                       <div class="price-wrap">
@@ -96,21 +90,17 @@
                       >
                         <i class="fa fa-heart"></i
                       ></a>
-                      <a href="" class="btn btn-light" data-abc="true">
-                        Remove</a
-                      >
+                      <button class="btn btn-light btn-round" data-abc="true">Remove</button>
                     </td>
                   </tr>
-                  <tr>
+                  <tr class="cart-row">
                     <td>
                       <figure class="itemside align-items-center">
                         <div class="aside">
                           <img src="img2.jpg" class="img-sm" />
                         </div>
                         <figcaption class="info">
-                          <a href="#" class="title text-dark" data-abc="true"
-                            >Flower Formal T-shirt</a
-                          >
+                          <p class="cart-item-title">Flower Formal T-shirt</p >
                           <p class="text-muted small">
                             SIZE: L <br />
                             Brand: ADDA
@@ -119,12 +109,7 @@
                       </figure>
                     </td>
                     <td>
-                      <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
+                      <input class="cart-quantity-input" type="number" value="1">
                     </td>
                     <td>
                       <div class="price-wrap">
@@ -143,24 +128,22 @@
                       >
                         <i class="fa fa-heart"></i
                       ></a>
-                      <a
-                        href=""
+                      <button
                         class="btn btn-light btn-round"
                         data-abc="true"
                       >
-                        Remove</a
+                        Remove</button
                       >
                     </td>
                   </tr>
-                  <tr>
+                  <tr class="cart-row">
                     <td>
                       <figure class="itemside align-items-center">
                         <div class="aside">
                           <img src="img3.jpg" class="img-sm" />
                         </div>
                         <figcaption class="info">
-                          <a href="#" class="title text-dark" data-abc="true"
-                            >Printed White Tshirt</a
+                          <p class="cart-item-title">Printed White Tshirt</p
                           >
                           <p class="small text-muted">
                             SIZE:M <br />
@@ -170,11 +153,7 @@
                       </figure>
                     </td>
                     <td>
-                      <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                      </select>
+                      <input class="cart-quantity-input" type="number" value="1">
                     </td>
                     <td>
                       <div class="price-wrap">
@@ -193,12 +172,11 @@
                       >
                         <i class="fa fa-heart"></i
                       ></a>
-                      <a
-                        href=""
+                      <button
                         class="btn btn-light btn-round"
                         data-abc="true"
                       >
-                        Remove</a
+                        Remove</button
                       >
                     </td>
                   </tr>
@@ -234,18 +212,18 @@
             <div class="card-body">
               <dl class="dlist-align">
                 <dt>Total price:</dt>
-                <dd class="text-right ml-3">$69.97</dd>
+                <dd class="cart-total-price">Rs.0</dd>
               </dl>
-              <dl class="dlist-align">
+              <!-- <dl class="dlist-align">
                 <dt>Discount:</dt>
-                <dd class="text-right text-danger ml-3">- $10.00</dd>
+                <dd class="text-right text-danger ml-3">- Rs.10.00</dd>
               </dl>
               <dl class="dlist-align">
                 <dt>Total:</dt>
                 <dd class="text-right text-dark b ml-3">
-                  <strong>$59.97</strong>
+                  <strong>Rs.59.97</strong>
                 </dd>
-              </dl>
+              </dl> -->
               <hr />
               <a
                 href="../payment/payment.html"
@@ -270,5 +248,6 @@
     <footer class="footer">
       <p>&copy; 2023 EasyBiz Store. All rights reserved.</p>
     </footer>
+    <!--<script src = "cart.js" async></script>-->
   </body>
 </html>
