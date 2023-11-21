@@ -64,7 +64,7 @@
       nav .search-bar {
         display: flex;
         align-items: center;
-        margin-left: 20px;
+        margin-left: 200px;
       }
 
       nav input[type="text"] {
@@ -190,6 +190,10 @@
           margin-bottom: 10px;
         }
       }
+      .box{
+        padding:10px;
+
+      }
     </style>
   </head>
   <body>
@@ -199,12 +203,12 @@
         <h1>EasyBiz</h1>
       </div>
       <nav>
-        <ul>
-          <li><a href="../homepage/homepage.html">Home</a></li>
-          <li><a href="../cart_summary/cart_summary.html">Your Cart</a></li>
-          <li><a href="../homepage/homepage.html">Logout</a></li>
-          <li><a href="../about_us/about_us.html">About Us</a></li>
-        </ul>
+        <div class="box">
+          <button><a href="../homepage/homepage.html">Home</a></button>
+          <button><a href="../cart_summary/cart_summary.html">Your Cart</a></button>
+          <button><a href="../homepage/homepage.html">Logout</a></button>
+          <button><a href="../about_us/about_us.html">About Us</a></button>
+        </div>
         <div class="search-bar">
           <input type="text" placeholder="Search..." />
           <button type="submit">Search</button>
@@ -221,8 +225,8 @@
             Elevate your style with our Shirts – a perfect fusion of comfort and
             sophistication for any occasion.
           </p>
-          <p>$19.99</p>
-          <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+          <p>Rs.399</p>
+          <button onclick="addToCart('Product 1', 399)">Add to Cart</button>
         </div>
 
         <div class="product">
@@ -232,8 +236,8 @@
             Step out in our comfy yet stylish shoes, perfect for any occasion
             and making every walk a breeze!
           </p>
-          <p>$24.99</p>
-          <button onclick="addToCart('Product 2', 24.99)">Add to Cart</button>
+          <p>Rs.2999</p>
+          <button onclick="addToCart('Product 2', 2999)">Add to Cart</button>
         </div>
         <div class="product">
           <img src="purse.png" alt="Product 3" />
@@ -242,15 +246,15 @@
             Elevate your look with our trendy purse, marrying fashion and
             functionality for a touch of everyday elegance.
           </p>
-          <p>$10.90</p>
-          <button onclick="addToCart('Product 3', 10.90)">Add to Cart</button>
+          <p>Rs.599</p>
+          <button onclick="addToCart('Product 3', 599)">Add to Cart</button>
         </div>
       </section>
 
       <section class="cart-summary">
         <h3>Cart Summary</h3>
         <ul id="cart-items"></ul>
-        <p>Total: $<span id="cart-total">0.00</span></p>
+        <p>Total: Rs.<span id="cart-total">0.00</span></p>
         <a href="../cart_summary/cart_summary.html">
           <button onclick="checkout()">Checkout</button>
         </a>
@@ -261,35 +265,35 @@
       <p>&copy; 2023 EasyBiz. All rights reserved.</p>
     </footer>
 
-    <script>
-      let cartItems = [];
-      let cartTotal = 0;
+    <script src = "product_page.js">
+      // let cartItems = [];
+      // let cartTotal = 0;
 
-      function addToCart(productName, price) {
-        cartItems.push({ productName, price });
-        cartTotal += price;
-        updateCartSummary();
-      }
+      // function addToCart(productName, price) {
+      //   cartItems.push({ productName, price });
+      //   cartTotal += price;
+      //   updateCartSummary();
+      // }
 
-      function updateCartSummary() {
-        const cartList = document.getElementById("cart-items");
-        const cartTotalElement = document.getElementById("cart-total");
-        cartList.innerHTML = "";
+      // function updateCartSummary() {
+      //   const cartList = document.getElementById("cart-items");
+      //   const cartTotalElement = document.getElementById("cart-total");
+      //   cartList.innerHTML = "";
 
-        cartItems.forEach((item) => {
-          const listItem = document.createElement("li");
-          listItem.textContent = `${item.productName} - $${item.price.toFixed(
-            2
-          )}`;
-          cartList.appendChild(listItem);
-        });
+      //   cartItems.forEach((item) => {
+      //     const listItem = document.createElement("li");
+      //     listItem.textContent = `${item.productName} - $${item.price.toFixed(
+      //       2
+      //     )}`;
+      //     cartList.appendChild(listItem);
+      //   });
 
-        cartTotalElement.textContent = cartTotal.toFixed(2);
-      }
+      //   cartTotalElement.textContent = cartTotal.toFixed(2);
+      // }
 
-      function checkout() {
-        alert("Redirecting to checkout. Total: $" + cartTotal.toFixed(2));
-      }
+      // function checkout() {
+      //   alert("Redirecting to checkout. Total: $" + cartTotal.toFixed(2));
+      // }
     </script>
   </body>
 </html>

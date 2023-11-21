@@ -25,7 +25,7 @@
       }
 
       body {
-        font-family: "Roboto", sans-serif; /* Classy font: Roboto */
+        font-family: "Roboto", sans-serif; 
         line-height: 1.6;
         background-color: #f9f9f9;
       }
@@ -50,7 +50,7 @@
       }
 
       nav li {
-        margin-left: 20px;
+        margin-left: 15px;
       }
 
       nav a {
@@ -62,7 +62,7 @@
       nav .search-bar {
         display: flex;
         align-items: center;
-        margin-left: 20px;
+        margin-left: 200px;
       }
 
       nav input[type="text"] {
@@ -200,13 +200,16 @@
         display: flex;
         align-items: center;
         margin-bottom: 30px;
+        background-color:#f5deb3;
+        border-radius: 5px;
+        padding: 5px;
       }
 
       .service-icon {
-        flex-basis: 20%;
+        flex-basis: 10%;
         font-size: 2rem;
         color: #008080; /* Teal color */
-        margin-right: 20px;
+        margin-left: 20px;
       }
 
       .service-text {
@@ -225,6 +228,7 @@
       .logo {
         display: flex;
       }
+
     </style>
   </head>
   <body>
@@ -234,15 +238,15 @@
         <h1>EasyBiz</h1>
       </div>
       <nav>
-        <ul>
-          <li>
+        <div class=" box">
+          <button>
             <a href="../Login-Signup-buyer/signin.html">Login as Buyer</a>
-          </li>
-          <li>
+          </button>
+          <button>
             <a href="../Login-Signup-seller/signin.html">Login as Seller</a>
-          </li>
-          <li><a href="../about_us/about_us.html">About Us</a></li>
-        </ul>
+          </button>
+          <button><a href="../about_us/about_us.html">About Us</a></button>
+        </div>
         <div class="search-bar">
           <input type="text" placeholder="Search..." />
           <button type="submit">Search</button>
@@ -261,7 +265,7 @@
       </section>
 
       <section class="features">
-        <div class="feature">
+        <!-- <div class="feature">
           <i class="icon fa fa-users"></i>
           <h3>Connect with Customers</h3>
           <p>
@@ -279,17 +283,17 @@
           <p>
             Share insights, tips, and updates with your community through blogs.
           </p>
-        </div>
+        </div> -->
         <div class="feature">
           <i class="icon fa fa-user"></i>
-          <h3>Login as Seller</h3>
+          <h3 ><a style="color: #333;"href="../Login-Signup-seller/signin.html">Login as Seller</a></h3>
           <p>
             Access your seller account to manage your online store and products.
           </p>
         </div>
         <div class="feature">
           <i class="icon fa fa-user"></i>
-          <h3>Login as Customer</h3>
+          <h3><a  style="color: #333;"href="../Login-Signup-buyer/signin.html">Login as Customer</a></h3>
           <p>Login as a customer to view orders, track shipments, and more.</p>
         </div>
       </section>

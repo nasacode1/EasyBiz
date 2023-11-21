@@ -56,6 +56,15 @@
         color: #fff;
         font-size: 1.2rem; /* Increased font size for the navigation links */
       }
+      nav button {
+        padding: 8px 20px;
+        background-color: #008080; /* Teal color */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
 
       main {
         padding: 40px;
@@ -193,6 +202,9 @@
         display: flex;
         flex-direction: row;
       }
+      .box{
+        padding:20px;
+      }
     </style>
   </head>
   <body>
@@ -202,11 +214,11 @@
         <h1>EasyBiz</h1>
       </div>
       <nav>
-        <ul>
-          <li><a href="../homepage/homepage.html">Home</a></li>
-          <li><a href="../add_prod/add_prod.html">Add Product</a></li>
-          <li><a href="../homepage/homepage.html">Logout</a></li>
-        </ul>
+        <div class="box">
+          <button><a href="../homepage/homepage.html">Home</a></button>
+          <button><a href="../add_prod/add_prod.html">Add Product</a></button>
+          <button><a href="../homepage/homepage.html">Logout</a></button>
+        </div>
       </nav>
     </header>
 
