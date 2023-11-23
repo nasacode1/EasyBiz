@@ -129,7 +129,7 @@
 
                 <div class="mt-4 mb-4 d-flex justify-content-between">
                     <span><a href="../cart_summary/cart_summary.html" style="color: black; text-decoration: none;">Previous Page</a></span>
-                    <button class="btn px-3" id="payButton" style="color: white; background-color: teal;">Pay &#8377XXX.xx</button>
+                    <button class="btn px-3" id="payButton" style="color: white; background-color: teal;">Continue Payment</button>
                 </div>
 
             </div>
@@ -140,10 +140,10 @@
 
                     <div class="content" style="color: white;">
 
-                        <span>You have to pay</span>
+                        <!--<span>You have to pay</span>
                         <div class="d-flex flex-row align-items-end mb-3">
-                            <h1 class="mb-0 yellow">&#8377XXX</h1> <span>.xx</span>
-                        </div>
+                            <h1 class="mb-0 yellow">&#8377</h1> <span>.xx</span>
+                        </div>-->
                         <span>Celebrate Your Purchase! Experience the Joy of Shopping With Us.</span>
                         <h4>Happy Shopping!</h4>
 
@@ -175,7 +175,7 @@
                 payButton.disabled = false;
             }
             else {
-                payButton.textContent = 'Pay \u20B9 XXX.xx';
+                payButton.textContent = 'Continue Payment';
                 payButton.disabled = false;
             }
         });

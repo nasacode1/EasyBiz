@@ -37,156 +37,119 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <aside class="col-lg-9">
-          <div class="card">
-            <div class="table-responsive">
-              <table class="table table-borderless table-shopping-cart">
-                <thead class="text-muted">
-                  <tr class="small text-uppercase">
-                    <th scope="col">Product</th>
-                    <th scope="col" width="120">Quantity</th>
-                    <th scope="col" width="120">Price</th>
-                    <th
-                      scope="col"
-                      class="text-right d-none d-md-block"
-                      width="200"
-                    ></th>
-                  </tr>
-                </thead>
-                <tbody class="cart-items">
-                  <tr class="cart-row">
-                    <td>
-                      <figure class="itemside align-items-center">
-                        <div class="aside">
-                          <img src="img1.png" class="img-sm" />
-                        </div>
-                        <figcaption class="info">
-                          <p class="cart-item-title">Tshirt with round neck</p>
-                          <p class="text-muted small">
-                            SIZE: L <br />
-                            Brand: MAXTRA
-                          </p>
-                        </figcaption>
-                      </figure>
-                    </td>
-                    <td>
-                      <input class="cart-quantity-input" type="number" value="1">
-                    </td>
-                    <td>
-                      <div class="price-wrap">
-                        <var class="price">Rs.599</var>
-                        <small class="text-muted"> Rs.450 each </small>
-                      </div>
-                    </td>
-                    <td class="text-right d-none d-md-block">
-                      <a
-                        data-original-title="Save to Wishlist"
-                        title=""
-                        href=""
-                        class="btn btn-light"
-                        data-toggle="tooltip"
-                        data-abc="true"
-                      >
-                        <i class="fa fa-heart"></i
-                      ></a>
-                      <button class="btn btn-light btn-round" data-abc="true">Remove</button>
-                    </td>
-                  </tr>
-                  <tr class="cart-row">
-                    <td>
-                      <figure class="itemside align-items-center">
-                        <div class="aside">
-                          <img src="img2.jpg" class="img-sm" />
-                        </div>
-                        <figcaption class="info">
-                          <p class="cart-item-title">Flower Formal T-shirt</p >
-                          <p class="text-muted small">
-                            SIZE: L <br />
-                            Brand: ADDA
-                          </p>
-                        </figcaption>
-                      </figure>
-                    </td>
-                    <td>
-                      <input class="cart-quantity-input" type="number" value="1">
-                    </td>
-                    <td>
-                      <div class="price-wrap">
-                        <var class="price">Rs.385</var>
-                        <small class="text-muted"> Rs.350 each </small>
-                      </div>
-                    </td>
-                    <td class="text-right d-none d-md-block">
-                      <a
-                        data-original-title="Save to Wishlist"
-                        title=""
-                        href=""
-                        class="btn btn-light"
-                        data-toggle="tooltip"
-                        data-abc="true"
-                      >
-                        <i class="fa fa-heart"></i
-                      ></a>
-                      <button
-                        class="btn btn-light btn-round"
-                        data-abc="true"
-                      >
-                        Remove</button
-                      >
-                    </td>
-                  </tr>
-                  <tr class="cart-row">
-                    <td>
-                      <figure class="itemside align-items-center">
-                        <div class="aside">
-                          <img src="img3.jpg" class="img-sm" />
-                        </div>
-                        <figcaption class="info">
-                          <p class="cart-item-title">Printed White Tshirt</p
-                          >
-                          <p class="small text-muted">
-                            SIZE:M <br />
-                            Brand: Cantabil
-                          </p>
-                        </figcaption>
-                      </figure>
-                    </td>
-                    <td>
-                      <input class="cart-quantity-input" type="number" value="1">
-                    </td>
-                    <td>
-                      <div class="price-wrap">
-                        <var class="price">Rs.299</var>
-                        <small class="text-muted"> Rs.249 each</small>
-                      </div>
-                    </td>
-                    <td class="text-right d-none d-md-block">
-                      <a
-                        data-original-title="Save to Wishlist"
-                        title=""
-                        href=""
-                        class="btn btn-light"
-                        data-toggle="tooltip"
-                        data-abc="true"
-                      >
-                        <i class="fa fa-heart"></i
-                      ></a>
-                      <button
-                        class="btn btn-light btn-round"
-                        data-abc="true"
-                      >
-                        Remove</button
-                      >
-                    </td>
-                  </tr>
-                </tbody>
+      
+                <!-- Cart page -->
+                <div class="cart">
+                  <table class="cart-items">
+                    <thead>
+                      <tr>
+                        <th>Product</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="cartBody">
+                      <!-- Cart items will be displayed here -->
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td colspan="4" style="text-align: right;"><strong>Total:</strong></td>
+                        <td id="cartTotal" colspan="2"></td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+                
+                <script>
+                  // Function to display cart items on the cart page
+                  function displayCartItems() {
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    let cartBody = document.getElementById('cartBody');
+                    let cartTotalCell = document.getElementById('cartTotal');
+                    let totalPrice = 0;
+                
+                    cartBody.innerHTML = ''; // Clear previous content
+                
+                    cart.forEach(product => {
+                      let row = cartBody.insertRow();
+                      row.classList.add('cart-item');
+                
+                      let cellImage = row.insertCell(0);
+                      let productImage = document.createElement('img');
+                      productImage.src = product.image;
+                      productImage.alt = 'Image';
+                      cellImage.appendChild(productImage);
+                
+                      let cellName = row.insertCell(1);
+                      cellName.textContent = product.name;
+                
+                      let cellPrice = row.insertCell(2);
+                      cellPrice.textContent = `Rs.${product.price}`;
+                
+                      let cellQuantity = row.insertCell(3);
+                      let productQuantity = document.createElement('input');
+                      productQuantity.classList.add('quantity');
+                      productQuantity.type = 'number';
+                      productQuantity.value = product.quantity;
+                      productQuantity.addEventListener('change', function(event) {
+                        let newQuantity = parseInt(event.target.value);
+                        updateQuantity(product.id, newQuantity);
+                        product.quantity = newQuantity;
+                        displayCartItems();
+                      });
+                      cellQuantity.appendChild(productQuantity);
+                
+                      let cellTotal = row.insertCell(4);
+                      let productTotal = product.price * product.quantity;
+                      totalPrice += productTotal;
+                      cellTotal.textContent = `Rs.${productTotal.toFixed(2)}`;
+                
+                      let cellRemove = row.insertCell(5);
+                      let removeButton = document.createElement('button');
+                      removeButton.textContent = 'Remove';
+                      removeButton.onclick = function () {
+                        removeFromCart(product.id);
+                        displayCartItems();
+                      };
+                      cellRemove.appendChild(removeButton);
+                    });
+                
+                    // Display total price
+                    cartTotalCell.textContent = `Rs.${totalPrice.toFixed(2)}`;
+                  }
+                
+                  // Function to update quantity in the cart
+                  function updateQuantity(productId, newQuantity) {
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    let productToUpdate = cart.find(item => item.id === productId);
+                    if (productToUpdate) {
+                      productToUpdate.quantity = newQuantity;
+                      localStorage.setItem('cart', JSON.stringify(cart));
+                    }
+                  }
+                
+                  // Function to remove a product from the cart
+                  function removeFromCart(productId) {
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    let updatedCart = cart.filter(item => item.id !== productId);
+                    localStorage.setItem('cart', JSON.stringify(updatedCart));
+                  }
+                
+                  // Call the function to display cart items when the cart page is loaded
+                  displayCartItems();
+                </script>
+                
               </table>
             </div>
           </div>
         </aside>
-        <aside class="col-lg-3">
-          <div class="card mb-3">
+        <div class="container">
+          <div class="row justify-content-center">
+              <aside class="col-lg-3 text-center">
+                  <div class="card mb-3 mx-auto">
             <div class="card-body">
               <form>
                 <div class="form-group">
@@ -211,19 +174,9 @@
           <div class="card">
             <div class="card-body">
               <dl class="dlist-align">
-                <dt>Total price:</dt>
-                <dd class="cart-total-price">Rs.0</dd>
+                
               </dl>
-              <!-- <dl class="dlist-align">
-                <dt>Discount:</dt>
-                <dd class="text-right text-danger ml-3">- Rs.10.00</dd>
-              </dl>
-              <dl class="dlist-align">
-                <dt>Total:</dt>
-                <dd class="text-right text-dark b ml-3">
-                  <strong>Rs.59.97</strong>
-                </dd>
-              </dl> -->
+             
               <hr />
               <a
                 href="../payment/payment.html"
@@ -249,5 +202,6 @@
       <p>&copy; 2023 EasyBiz Store. All rights reserved.</p>
     </footer>
     <!--<script src = "cart.js" async></script>-->
+
   </body>
 </html>

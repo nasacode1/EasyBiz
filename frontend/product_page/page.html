@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src = "cart.js" async></script>
+    <!-- <script src = "cart.js" async></script> -->
     <title>Product Page - EasyBiz</title>
     <link
       rel="stylesheet"
@@ -218,9 +218,56 @@
     </header>
 
     <main>
-      
+    <!-- Product page -->
+<div class="products">
+  <div class="product" data-id="1">
+    <h3>Sport Shoes</h3>
+    <img src="shoes.png" alt="Product 1 Image">
+    <p>Price: Rs.1999</p>
+    <button onclick="addToCart(1, 'Sport Shoes', 1999,'shoes.png')">Add to Cart</button>
+  </div>
+  <div class="product" data-id="2">
+    <h3>Shirt</h3>
+    <img src="shirt.png" alt="Product 2 Image">
+    <p>Price: Rs.599</p>
+    <button onclick="addToCart(2, 'Shirt', 599,'shirt.png')">Add to Cart</button>
+  </div>
+  <div class="product" data-id="2">
+    <h3>Purse</h3>
+    <img src="purse.png" alt="Product 3 Image">
+    <p>Price: Rs.399</p>
+    <button onclick="addToCart(3, 'Purse', 399,'purse.png')">Add to Cart</button>
+  </div>
+  <!-- Add more products as needed -->
+</div>
+
+<script>
+  // Function to add products to the cart
+  function addToCart(productId, productName, price, imageUrl) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let product = {
+      id: productId,
+      name: productName,
+      price: price,
+      quantity: 1,
+      image:imageUrl,
+    };
+
+    // Check if the product already exists in the cart
+    let existingProduct = cart.find(item => item.id === productId);
+    if (existingProduct) {
+      existingProduct.quantity++;
+    } else {
+      cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+</script>
+
+<!--       
       <section class="products">
-        <div class="product">
+        <div class="product" data-id="1">
           <img class="shop-item-image"src="shirt.png" alt="Product 1" />
           <h4 class="shop-item-title">Shirts</h4>
           <p>
@@ -231,7 +278,7 @@
           <button class="shop-item-button" onclick="addToCart('Product 1', 399)">Add to Cart</button>
         </div>
 
-        <div class="product">
+        <div class="product" data-id="2">
           <img class="shop-item-image"src="shoes.png" alt="Product 2" />
           <h4  class="shop-item-title">Shoes</h4>
           <p>
@@ -241,7 +288,7 @@
           <p class="shop-item-price">Rs.2999</p>
           <button class="shop-item-button" onclick="addToCart('Product 2', 2999)">Add to Cart</button>
         </div>
-        <div class="product">
+        <div class="product" data-id="3">
           <img class="shop-item-image"src="purse.png" alt="Product 3" />
           <h4  class="shop-item-title">Purse</h4>
           <p>
@@ -260,42 +307,13 @@
         <a href="../cart_summary/cart_summary.html">
           <button onclick="checkout()">Checkout</button>
         </a>
-      </section>
+      </section> -->
     </main>
 
     <footer>
       <p>&copy; 2023 EasyBiz. All rights reserved.</p>
     </footer>
 
-    <script src = "product_page.js">
-      // let cartItems = [];
-      // let cartTotal = 0;
-
-      // function addToCart(productName, price) {
-      //   cartItems.push({ productName, price });
-      //   cartTotal += price;
-      //   updateCartSummary();
-      // }
-
-      // function updateCartSummary() {
-      //   const cartList = document.getElementById("cart-items");
-      //   const cartTotalElement = document.getElementById("cart-total");
-      //   cartList.innerHTML = "";
-
-      //   cartItems.forEach((item) => {
-      //     const listItem = document.createElement("li");
-      //     listItem.textContent = `${item.productName} - $${item.price.toFixed(
-      //       2
-      //     )}`;
-      //     cartList.appendChild(listItem);
-      //   });
-
-      //   cartTotalElement.textContent = cartTotal.toFixed(2);
-      // }
-
-      // function checkout() {
-      //   alert("Redirecting to checkout. Total: $" + cartTotal.toFixed(2));
-      // }
-    </script>
+    <!-- <script src = "product_page.js"></script> -->
   </body>
 </html>
